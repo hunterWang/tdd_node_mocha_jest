@@ -1,0 +1,51 @@
+{
+  "name": "node_TDD_suite",
+  "version": "1.0.0",
+  "description": "prepare the environment for people who want to practice TDD in node.js with mocha or jest",
+  "main": "index.js",
+  "scripts": {
+    "build-ts": "tsc",
+    "test-jest": "jest --forceExit",
+    "test-mocha": "mocha test/**/*.js"
+  },
+  "author": "hunter.wang",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^8.0.27",
+    "express": "^4.15.4"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": "tsconfig.json"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!**/__mocks__/**",
+      "!**/__tests__/**"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>[/\\\\](build|docs|node_modules)[/\\\\]"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts)$": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/test/**/*.test.(ts|js)"
+    ],
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.8",
+    "@types/node": "^8.0.27",
+    "chai": "^4.1.2",
+    "jest": "^21.0.1",
+    "should": "^12.0.0",
+    "supertest": "^3.0.0",
+    "ts-jest": "^21.0.0",
+    "typescript": "^2.5.2"
+  }
+}
